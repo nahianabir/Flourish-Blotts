@@ -16,5 +16,28 @@ namespace Flourish___Blotts
         {
             InitializeComponent();
         }
+
+
+        private void LoadPage(UserControl page)
+        {
+            pnlMenu.Controls.Clear();   // clear old content
+            page.Dock = DockStyle.Fill;        // fill the panel
+            pnlMenu.Controls.Add(page); // add new content
+        }
+
+        private void btnBook_Click(object sender, EventArgs e)
+        {
+            LoadPage(new BookPage());
+        }
+
+        private void AdminPanelForm_Load(object sender, EventArgs e)
+        {
+            LoadPage(new HomePage());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoadPage(new HomePage());
+        }
     }
 }
