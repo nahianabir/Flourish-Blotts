@@ -49,7 +49,7 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -62,7 +62,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.btnSearch);
-            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Controls.Add(this.txtSearch);
             this.panel1.Controls.Add(this.dataGridView2);
             this.panel1.Location = new System.Drawing.Point(1, 96);
             this.panel1.Name = "panel1";
@@ -247,13 +247,13 @@
             this.dataGridView2.Size = new System.Drawing.Size(598, 552);
             this.dataGridView2.TabIndex = 0;
             // 
-            // textBox6
+            // txtSearch
             // 
-            this.textBox6.Location = new System.Drawing.Point(149, 51);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(281, 28);
-            this.textBox6.TabIndex = 1;
+            this.txtSearch.Location = new System.Drawing.Point(149, 51);
+            this.txtSearch.Multiline = true;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(281, 28);
+            this.txtSearch.TabIndex = 1;
             // 
             // btnSearch
             // 
@@ -322,7 +322,7 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button btnLogOut;
     }

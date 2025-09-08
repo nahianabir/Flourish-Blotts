@@ -32,7 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnEmployee = new System.Windows.Forms.Button();
             this.btnSales = new System.Windows.Forms.Button();
             this.btnBook = new System.Windows.Forms.Button();
             this.pnlMenu = new System.Windows.Forms.Panel();
@@ -46,7 +46,7 @@
             // 
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.btnHome);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.btnEmployee);
             this.panel1.Controls.Add(this.btnSales);
             this.panel1.Controls.Add(this.btnBook);
             this.panel1.Location = new System.Drawing.Point(-3, 56);
@@ -77,16 +77,17 @@
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // button3
+            // btnEmployee
             // 
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(15, 273);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(116, 44);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Employee";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnEmployee.Image")));
+            this.btnEmployee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmployee.Location = new System.Drawing.Point(15, 273);
+            this.btnEmployee.Name = "btnEmployee";
+            this.btnEmployee.Size = new System.Drawing.Size(116, 44);
+            this.btnEmployee.TabIndex = 2;
+            this.btnEmployee.Text = "Employee";
+            this.btnEmployee.UseVisualStyleBackColor = true;
+            this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
             // 
             // btnSales
             // 
@@ -164,7 +165,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnBook;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnEmployee;
         private System.Windows.Forms.Button btnSales;
         private System.Windows.Forms.Panel pnlMenu;
         private System.Windows.Forms.Panel panel2;

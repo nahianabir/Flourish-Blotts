@@ -44,5 +44,10 @@ namespace Flourish___Blotts
         {
             LoadPage(new SalesPage());
         }
+
+        private void btnEmployee_Click(object sender, EventArgs e)
+        {
+            LoadPage(new EmployeePage());
+        }
     }
 }
