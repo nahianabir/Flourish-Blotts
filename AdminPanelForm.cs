@@ -35,9 +35,14 @@ namespace Flourish___Blotts
             LoadPage(new HomePage());
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnHome_Click(object sender, EventArgs e)
         {
             LoadPage(new HomePage());
+        }
+
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            LoadPage(new SalesPage());
         }
     }
 }

@@ -59,6 +59,12 @@
     <Compile Include="BookPage.Designer.cs">
       <DependentUpon>BookPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployeePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EmployeePage.Designer.cs">
+      <DependentUpon>EmployeePage.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomePage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -79,11 +85,20 @@
     <Compile Include="SalesmanPanelForm.Designer.cs">
       <DependentUpon>SalesmanPanelForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SalesPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SalesPage.Designer.cs">
+      <DependentUpon>SalesPage.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminPanelForm.resx">
       <DependentUpon>AdminPanelForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BookPage.resx">
       <DependentUpon>BookPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeePage.resx">
+      <DependentUpon>EmployeePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
@@ -102,6 +117,9 @@
     </Compile>
     <EmbeddedResource Include="SalesmanPanelForm.resx">
       <DependentUpon>SalesmanPanelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesPage.resx">
+      <DependentUpon>SalesPage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
