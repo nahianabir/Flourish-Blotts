@@ -68,7 +68,7 @@
             this.lblBack.Font = new System.Drawing.Font("Lucida Bright", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBack.Location = new System.Drawing.Point(39, 71);
             this.lblBack.Name = "lblBack";
-            this.lblBack.Size = new System.Drawing.Size(84, 31);
+            this.lblBack.Size = new System.Drawing.Size(107, 39);
             this.lblBack.TabIndex = 8;
             this.lblBack.Text = "Back!";
             // 
@@ -79,7 +79,7 @@
             this.lblWelcome.Font = new System.Drawing.Font("Lucida Bright", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.Location = new System.Drawing.Point(39, 40);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(135, 31);
+            this.lblWelcome.Size = new System.Drawing.Size(171, 39);
             this.lblWelcome.TabIndex = 7;
             this.lblWelcome.Text = "Welcome";
             // 
@@ -130,7 +130,7 @@
             this.chkShowPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.chkShowPass.Location = new System.Drawing.Point(99, 148);
             this.chkShowPass.Name = "chkShowPass";
-            this.chkShowPass.Size = new System.Drawing.Size(113, 19);
+            this.chkShowPass.Size = new System.Drawing.Size(141, 24);
             this.chkShowPass.TabIndex = 4;
             this.chkShowPass.Text = "Show Password";
             this.chkShowPass.UseVisualStyleBackColor = true;
@@ -141,7 +141,7 @@
             this.txtID.Location = new System.Drawing.Point(99, 33);
             this.txtID.Margin = new System.Windows.Forms.Padding(4);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(192, 25);
+            this.txtID.Size = new System.Drawing.Size(192, 29);
             this.txtID.TabIndex = 0;
             // 
             // txtPassword
@@ -149,8 +149,7 @@
             this.txtPassword.Location = new System.Drawing.Point(99, 101);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(199, 25);
+            this.txtPassword.Size = new System.Drawing.Size(199, 29);
             this.txtPassword.TabIndex = 1;
             // 
             // label2
@@ -159,7 +158,7 @@
             this.label2.Location = new System.Drawing.Point(27, 109);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 17);
+            this.label2.Size = new System.Drawing.Size(80, 23);
             this.label2.TabIndex = 3;
             this.label2.Text = "Password";
             // 
@@ -171,7 +170,7 @@
             this.label1.Location = new System.Drawing.Point(51, 38);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(22, 20);
+            this.label1.Size = new System.Drawing.Size(28, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Id";
             // 
@@ -181,7 +180,7 @@
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 588);
             this.Controls.Add(this.panel1);
