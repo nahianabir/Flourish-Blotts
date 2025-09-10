@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminPanelForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnEmployee = new System.Windows.Forms.Button();
             this.btnSales = new System.Windows.Forms.Button();
@@ -44,7 +44,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.btnHome);
             this.panel1.Controls.Add(this.btnEmployee);
             this.panel1.Controls.Add(this.btnSales);
@@ -54,16 +54,17 @@
             this.panel1.Size = new System.Drawing.Size(164, 689);
             this.panel1.TabIndex = 0;
             // 
-            // button4
+            // btnLogout
             // 
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(15, 635);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(116, 44);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Logout";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.Location = new System.Drawing.Point(15, 635);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(116, 44);
+            this.btnLogout.TabIndex = 4;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnHome
             // 
@@ -171,6 +172,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

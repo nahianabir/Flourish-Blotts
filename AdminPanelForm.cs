@@ -49,5 +49,13 @@ namespace Flourish___Blotts
         {
             LoadPage(new EmployeePage());
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            LoginForm login = new LoginForm();
+            login.Show();
+
+            this.Close();
+        }
     }
 }
