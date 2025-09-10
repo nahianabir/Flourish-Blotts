@@ -59,6 +59,7 @@
     <Compile Include="BookPage.Designer.cs">
       <DependentUpon>BookPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataAccess.cs" />
     <Compile Include="EmployeePage.cs">
       <SubType>UserControl</SubType>
     </Compile>
