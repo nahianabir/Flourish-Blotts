@@ -109,6 +109,7 @@ namespace Flourish___Blotts
             }
             try
             {
+                //admin login
                 // ❗ Using your DataAccess.ExecuteQueryTable
                 string sql = "SELECT * FROM Admin WHERE ID = '" + userID +
                              "' AND Password COLLATE SQL_Latin1_General_CP1_CS_AS = '" + password + "';";
@@ -123,11 +124,34 @@ namespace Flourish___Blotts
                     AdminPanelForm adminPanel = new AdminPanelForm();
                     adminPanel.Show();
                     this.Hide();
+                    return;
+                    adminPanel.FormClosed += (s, args) => this.Close();
                 }
-                else
+
+                //employee login
+
+                string empSql = "SELECT * FROM Salesman WHERE Id = '" + userID +
+                        "' AND Password COLLATE SQL_Latin1_General_CP1_CS_AS = '" + password + "';";
+
+                var empDt = this.Da.ExecuteQueryTable(empSql);
+
+                if (empDt.Rows.Count == 1)
                 {
-                    MessageBox.Show("Invalid ID or Password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Salesman login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    SalesmanPanelForm salesmanPanel = new SalesmanPanelForm();
+                    salesmanPanel.Show();
+                    this.Hide();
+
+                    //need to be fixed
+                    salesmanPanel.FormClosed += (s, args) => this.Close();
+                    return;
                 }
+
+                // 🔹 Step 3: Neither Admin nor Employee
+                MessageBox.Show("Invalid ID or Password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            
+
             }
             catch (Exception ex)
             {

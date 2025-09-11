@@ -33,6 +33,8 @@ namespace Flourish___Blotts
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.dtpPublishingYear = new System.Windows.Forms.DateTimePicker();
+            this.cmbGenre = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -51,16 +53,21 @@ namespace Flourish___Blotts
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.txtAutoSearch = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dvgBook = new System.Windows.Forms.DataGridView();
-            this.cmbGenre = new System.Windows.Forms.ComboBox();
-            this.dtpPublishingYear = new System.Windows.Forms.DateTimePicker();
+            this.dgvBook = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgBook)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -96,6 +103,32 @@ namespace Flourish___Blotts
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(238, 567);
             this.panel4.TabIndex = 3;
+            // 
+            // dtpPublishingYear
+            // 
+            this.dtpPublishingYear.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpPublishingYear.Location = new System.Drawing.Point(32, 346);
+            this.dtpPublishingYear.Name = "dtpPublishingYear";
+            this.dtpPublishingYear.Size = new System.Drawing.Size(122, 20);
+            this.dtpPublishingYear.TabIndex = 18;
+            // 
+            // cmbGenre
+            // 
+            this.cmbGenre.FormattingEnabled = true;
+            this.cmbGenre.Items.AddRange(new object[] {
+            "Fantasy",
+            "Science Fiction",
+            "Mystery",
+            "Thriller",
+            "Horror",
+            "Romance",
+            "Historical Fiction",
+            "Young Adult",
+            "Literary Fiction"});
+            this.cmbGenre.Location = new System.Drawing.Point(32, 285);
+            this.cmbGenre.Name = "cmbGenre";
+            this.cmbGenre.Size = new System.Drawing.Size(148, 21);
+            this.cmbGenre.TabIndex = 17;
             // 
             // label8
             // 
@@ -195,6 +228,7 @@ namespace Flourish___Blotts
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
             // 
             // txtPrice
             // 
@@ -235,7 +269,7 @@ namespace Flourish___Blotts
             // 
             this.panel3.Controls.Add(this.btnAdd);
             this.panel3.Controls.Add(this.btnSearch);
-            this.panel3.Controls.Add(this.txtSearch);
+            this.panel3.Controls.Add(this.txtAutoSearch);
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(951, 75);
@@ -249,6 +283,7 @@ namespace Flourish___Blotts
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnSearch
             // 
@@ -259,55 +294,90 @@ namespace Flourish___Blotts
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
-            // txtSearch
+            // txtAutoSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(50, 23);
-            this.txtSearch.Multiline = true;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(443, 33);
-            this.txtSearch.TabIndex = 0;
+            this.txtAutoSearch.Location = new System.Drawing.Point(50, 23);
+            this.txtAutoSearch.Multiline = true;
+            this.txtAutoSearch.Name = "txtAutoSearch";
+            this.txtAutoSearch.Size = new System.Drawing.Size(443, 33);
+            this.txtAutoSearch.TabIndex = 0;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dvgBook);
+            this.panel2.Controls.Add(this.dgvBook);
             this.panel2.Location = new System.Drawing.Point(3, 103);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(692, 567);
             this.panel2.TabIndex = 0;
             // 
-            // dvgBook
+            // dgvBook
             // 
-            this.dvgBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgBook.Location = new System.Drawing.Point(3, 3);
-            this.dvgBook.Name = "dvgBook";
-            this.dvgBook.Size = new System.Drawing.Size(686, 561);
-            this.dvgBook.TabIndex = 0;
+            this.dgvBook.AllowUserToAddRows = false;
+            this.dgvBook.AllowUserToDeleteRows = false;
+            this.dgvBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBook.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7});
+            this.dgvBook.Location = new System.Drawing.Point(3, 3);
+            this.dgvBook.Name = "dgvBook";
+            this.dgvBook.ReadOnly = true;
+            this.dgvBook.Size = new System.Drawing.Size(686, 561);
+            this.dgvBook.TabIndex = 0;
+            this.dgvBook.DoubleClick += new System.EventHandler(this.dgvBook_DoubleClick);
             // 
-            // cmbGenre
+            // Column1
             // 
-            this.cmbGenre.FormattingEnabled = true;
-            this.cmbGenre.Items.AddRange(new object[] {
-            "Fantasy",
-            "Science Fiction",
-            "Mystery",
-            "Thriller",
-            "Horror",
-            "Romance",
-            "Historical Fiction",
-            "Young Adult",
-            "Literary Fiction"});
-            this.cmbGenre.Location = new System.Drawing.Point(32, 285);
-            this.cmbGenre.Name = "cmbGenre";
-            this.cmbGenre.Size = new System.Drawing.Size(148, 21);
-            this.cmbGenre.TabIndex = 17;
+            this.Column1.DataPropertyName = "ISBN";
+            this.Column1.HeaderText = "ISBN";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
-            // dtpPublishingYear
+            // Column2
             // 
-            this.dtpPublishingYear.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpPublishingYear.Location = new System.Drawing.Point(32, 346);
-            this.dtpPublishingYear.Name = "dtpPublishingYear";
-            this.dtpPublishingYear.Size = new System.Drawing.Size(122, 20);
-            this.dtpPublishingYear.TabIndex = 18;
+            this.Column2.DataPropertyName = "Name";
+            this.Column2.HeaderText = "Name";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "AuthorName";
+            this.Column3.HeaderText = "Author Name";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Genre";
+            this.Column4.HeaderText = "Genre";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "PublishingYear";
+            this.Column5.HeaderText = "Publishing Year";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "Quantity";
+            this.Column6.HeaderText = "Quantity";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "Price";
+            this.Column7.HeaderText = "Price";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             // 
             // BookPage
             // 
@@ -323,7 +393,7 @@ namespace Flourish___Blotts
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dvgBook)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -335,8 +405,8 @@ namespace Flourish___Blotts
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.DataGridView dvgBook;
+        private System.Windows.Forms.TextBox txtAutoSearch;
+        private System.Windows.Forms.DataGridView dgvBook;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -355,5 +425,12 @@ namespace Flourish___Blotts
         private System.Windows.Forms.TextBox txtISBN;
         private System.Windows.Forms.DateTimePicker dtpPublishingYear;
         private System.Windows.Forms.ComboBox cmbGenre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
     }
 }
