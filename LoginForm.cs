@@ -125,19 +125,19 @@ namespace Flourish___Blotts
                     adminPanel.Show();
                     this.Hide();
                     return;
-                    adminPanel.FormClosed += (s, args) => this.Close();
+                    
                 }
 
                 //employee login
 
-                string empSql = "SELECT * FROM Salesman WHERE Id = '" + userID +
+                string empSql = "SELECT * FROM Employee WHERE Id = '" + userID +
                         "' AND Password COLLATE SQL_Latin1_General_CP1_CS_AS = '" + password + "';";
 
                 var empDt = this.Da.ExecuteQueryTable(empSql);
 
                 if (empDt.Rows.Count == 1)
                 {
-                    MessageBox.Show("Salesman login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Employee login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     SalesmanPanelForm salesmanPanel = new SalesmanPanelForm();
                     salesmanPanel.Show();

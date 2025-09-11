@@ -36,15 +36,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtISBN = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cmbPaymentMethod = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnBill = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
@@ -135,15 +131,11 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.txtPhoneNumber);
             this.panel3.Controls.Add(this.txtPrice);
             this.panel3.Controls.Add(this.txtQuantity);
             this.panel3.Controls.Add(this.txtName);
             this.panel3.Controls.Add(this.txtISBN);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.cmbPaymentMethod);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.btnPrint);
+            this.panel3.Controls.Add(this.btnBill);
             this.panel3.Controls.Add(this.btnAdd);
             this.panel3.Controls.Add(this.dataGridView1);
             this.panel3.Controls.Add(this.label5);
@@ -151,17 +143,10 @@
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(611, 96);
+            this.panel3.Location = new System.Drawing.Point(608, 96);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(517, 651);
+            this.panel3.Size = new System.Drawing.Size(520, 651);
             this.panel3.TabIndex = 2;
-            // 
-            // txtPhoneNumber
-            // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(108, 214);
-            this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(100, 20);
-            this.txtPhoneNumber.TabIndex = 15;
             // 
             // txtPrice
             // 
@@ -195,49 +180,19 @@
             this.txtISBN.Size = new System.Drawing.Size(99, 20);
             this.txtISBN.TabIndex = 11;
             // 
-            // label7
+            // btnBill
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(271, 217);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 13);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Payment Method";
-            // 
-            // cmbPaymentMethod
-            // 
-            this.cmbPaymentMethod.FormattingEnabled = true;
-            this.cmbPaymentMethod.Items.AddRange(new object[] {
-            "Cash",
-            "Bkash",
-            "Nagad",
-            "Card"});
-            this.cmbPaymentMethod.Location = new System.Drawing.Point(364, 214);
-            this.cmbPaymentMethod.Name = "cmbPaymentMethod";
-            this.cmbPaymentMethod.Size = new System.Drawing.Size(121, 21);
-            this.cmbPaymentMethod.TabIndex = 9;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(24, 217);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 13);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Phone Number";
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Location = new System.Drawing.Point(398, 267);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(75, 23);
-            this.btnPrint.TabIndex = 7;
-            this.btnPrint.Text = "Print";
-            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnBill.Location = new System.Drawing.Point(418, 212);
+            this.btnBill.Name = "btnBill";
+            this.btnBill.Size = new System.Drawing.Size(75, 23);
+            this.btnBill.TabIndex = 7;
+            this.btnBill.Text = "Bill";
+            this.btnBill.UseVisualStyleBackColor = true;
+            this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(27, 267);
+            this.btnAdd.Location = new System.Drawing.Point(47, 212);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 6;
@@ -247,9 +202,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 319);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 257);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(514, 332);
+            this.dataGridView1.Size = new System.Drawing.Size(511, 391);
             this.dataGridView1.TabIndex = 5;
             // 
             // label5
@@ -383,14 +338,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Button btnBill;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtISBN;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cmbPaymentMethod;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.TextBox txtName;

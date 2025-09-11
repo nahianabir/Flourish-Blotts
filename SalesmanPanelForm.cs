@@ -49,5 +49,11 @@ namespace Flourish___Blotts
             this.txtName.Text = this.dgvBook.CurrentRow.Cells[1].Value.ToString();
             this.txtPrice.Text = this.dgvBook.CurrentRow.Cells[6].Value.ToString();
         }
+
+        private void btnBill_Click(object sender, EventArgs e)
+        {
+            BillPanelForm bill = new BillPanelForm();
+            bill.Show();
+        }
     }
 }
