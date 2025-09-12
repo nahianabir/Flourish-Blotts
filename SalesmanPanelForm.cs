@@ -44,9 +44,6 @@ namespace Flourish___Blotts
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            LoginForm login = new LoginForm();
-            login.Show();
-
             this.Close();
         }
 
@@ -130,16 +127,10 @@ namespace Flourish___Blotts
                     MessageBox.Show("Failed to add book to cart.");
                 }
 
-                // Refresh both grids
                 this.PopulateGridView();
-                
-                // refresh Book table grid
                 this.PopulateCartGridView();
-
-                // Show updated total
                 this.CalculateCartTotal();
 
-                // Clear fields
                 FormClear.ClearAllControls(this);
             }
             catch (Exception ex)
@@ -185,7 +176,7 @@ namespace Flourish___Blotts
                 }
 
                 // Get selected row data
-                int cartId = Convert.ToInt32(this.dgvCart.CurrentRow.Cells["Id"].Value);  // use unique Id
+                int cartId = Convert.ToInt32(this.dgvCart.CurrentRow.Cells["Id"].Value);
                 string isbn = this.dgvCart.CurrentRow.Cells["ISBN"].Value.ToString();
                 int quantity = Convert.ToInt32(this.dgvCart.CurrentRow.Cells["Quantity"].Value);
 
@@ -201,11 +192,9 @@ namespace Flourish___Blotts
 
                     MessageBox.Show("Book removed from cart and stock restored.");
 
-                    // Refresh grids
-                    this.PopulateGridView();      // refresh Book table
-                    this.PopulateCartGridView();  // refresh Cart table
+                    this.PopulateGridView();      
+                    this.PopulateCartGridView(); 
 
-                    // Update total
                     this.CalculateCartTotal();
                 }
                 else

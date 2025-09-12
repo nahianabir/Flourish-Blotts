@@ -175,6 +175,7 @@
             // 
             this.txtSalesmanID.Location = new System.Drawing.Point(487, 206);
             this.txtSalesmanID.Name = "txtSalesmanID";
+            this.txtSalesmanID.ReadOnly = true;
             this.txtSalesmanID.Size = new System.Drawing.Size(100, 20);
             this.txtSalesmanID.TabIndex = 6;
             // 

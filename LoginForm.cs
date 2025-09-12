@@ -26,62 +26,11 @@ namespace Flourish___Blotts
             this.Da = new DataAccess();
         }
 
-        
-
-        //text animation
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-
-            if (!isFirstAnimationComplete)
-            {
-                // (lblWelcome)
-                if (len < text.Length)
-                {
-                    lblWelcome.Text = lblWelcome.Text + text.ElementAt(len);
-                    len++;
-                }
-                else
-                {
-                    // First animation completed
-                    isFirstAnimationComplete = true;
-                    len = 0;
-                    text = backText;
-
-                    // Make second label visible and start its animation
-                    lblBack.Visible = true;
-                    lblBack.Text = "";
-                }
-            }
-            else
-            {
-                //(lblBack)
-                if (len < text.Length)
-                {
-                    lblBack.Text = lblBack.Text + text.ElementAt(len);
-                    len++;
-                }
-                else
-                {
-                    timer1.Stop();
-                }
-            }
-        }
 
         private void LoginForm_Load_1(object sender, EventArgs e)
         {
-            // Save original texts
-            welcomeText = lblWelcome.Text;
-            backText = lblBack.Text;
-
-            // Hide second label initially
-            lblBack.Visible = false;
-
-            // Start first animation
-            text = welcomeText;
-            lblWelcome.Text = "";
-            timer1.Start();
-
             txtPassword.UseSystemPasswordChar = true;
+
         }
 
 
@@ -98,6 +47,28 @@ namespace Flourish___Blotts
             }
         }
 
+
+
+
+        public void ShowPanel(Form panelForm)
+        {
+            // Hide this login form instead of closing it
+            this.Hide();
+
+            // Set up the panel form to show the login form again on close
+            panelForm.FormClosed += (s, args) => this.Show();
+
+            
+            panelForm.Show();
+            FormClear.ClearAllControls(this);
+        }
+
+
+
+
+
+
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string userID = txtID.Text;
@@ -111,20 +82,23 @@ namespace Flourish___Blotts
             try
             {
                 //admin login
-                string sql = "SELECT * FROM Admin WHERE ID = '" + userID +
+                string adminsql = "SELECT * FROM Admin WHERE ID = '" + userID +
                              "' AND Password COLLATE SQL_Latin1_General_CP1_CS_AS = '" + password + "';";
 
-                var dt = this.Da.ExecuteQueryTable(sql);
+                var adminDt = this.Da.ExecuteQueryTable(adminsql);
 
-                if (dt.Rows.Count == 1)
+                if (adminDt.Rows.Count == 1)
                 {
                     MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     AdminPanelForm adminPanel = new AdminPanelForm();
-                    adminPanel.Show();
-                    this.Hide();
+                    ShowPanel(adminPanel);
                     return;
                 }
+
+
+
+
 
                 //employee login
                 string empSql = "SELECT * FROM Employee WHERE Id = '" + userID +
@@ -144,10 +118,9 @@ namespace Flourish___Blotts
                         SalesmanPanelForm salesmanPanel = new SalesmanPanelForm();
                         salesmanPanel.LoggedInSalesmanID = userID;
 
-                        salesmanPanel.Show();
-                        this.Hide();
+                        ShowPanel(salesmanPanel);
 
-                        salesmanPanel.FormClosed += (s, args) => this.Close();
+
                     }
                     else
                     {

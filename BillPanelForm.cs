@@ -52,12 +52,23 @@ namespace Flourish___Blotts
                     return;
                 }
 
+                // Format SaleDate (SQL expects yyyy-MM-dd)
+                string saleDate = this.dtpSaleDate.Value.ToString("yyyy-MM-dd");
+
                 // Insert each cart item into Sales table
                 foreach (DataRow row in dtCart.Rows)
                 {
-                    var sqlSale = "insert into Sales (CustomerName, CustomerPhone, PaymentType, ISBN, BookName, Quantity, Price, TotalPrice, SalesmanID) " +
-                                  "values ('" + this.txtCustomerName.Text + "', '" + this.txtCustomerPhone.Text + "', '" + this.cmbPaymentType.Text + "', " +
-                                  "'" + row["ISBN"] + "', '" + row["Name"] + "', " + row["Quantity"] + ", " + row["Price"] + ", " + row["TotalPrice"] + ", '" + this.txtSalesmanID + "');";
+                    var sqlSale = "insert into Sales (CustomerName, CustomerPhone, PaymentType, SaleDate, ISBN, BookName, Quantity, Price, TotalPrice, SalesmanID) " +
+                                  "values ('" + this.txtCustomerName.Text + "', " +
+                                          "'" + this.txtCustomerPhone.Text + "', " +
+                                          "'" + this.cmbPaymentType.Text + "', " +
+                                          "'" + saleDate + "', " +
+                                          "'" + row["ISBN"].ToString() + "', " +
+                                          "'" + row["Name"].ToString() + "', " +
+                                          row["Quantity"].ToString() + ", " +
+                                          row["Price"].ToString() + ", " +
+                                          row["TotalPrice"].ToString() + ", " +
+                                          "'" + this.txtSalesmanID.Text + "');";
 
                     this.Da.ExecuteDMLQuery(sqlSale);
                 }
@@ -67,14 +78,15 @@ namespace Flourish___Blotts
 
                 MessageBox.Show("Sale completed successfully!");
 
-                // Refresh Book stock + Cart grid
-                //this.PopulateGridView();
+                // Refresh Cart grid
                 this.PopulateCartGridView();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+
+
         }
 
         private void BillPanelForm_Load(object sender, EventArgs e)

@@ -58,9 +58,6 @@ namespace Flourish___Blotts
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            LoginForm login = new LoginForm();
-            login.Show();
-
             this.Close();
         }
     }

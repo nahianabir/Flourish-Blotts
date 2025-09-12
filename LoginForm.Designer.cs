@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblBack = new System.Windows.Forms.Label();
@@ -42,7 +41,6 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -175,10 +173,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Id";
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -214,7 +208,6 @@
         private System.Windows.Forms.Label lblBack;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.CheckBox chkShowPass;
         private System.Windows.Forms.Button btnLogin;
     }
