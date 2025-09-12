@@ -45,7 +45,7 @@ namespace Flourish___Blotts
             }
         }
 
-        private void ClearAll()
+        /*private void ClearAll()
         {
             this.txtID.Clear();
             this.txtName.Clear();
@@ -54,7 +54,7 @@ namespace Flourish___Blotts
             this.cmbActiveStatus.SelectedIndex = -1;
 
             this.dgvEmployee.ClearSelection();
-        }
+        }*/
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -79,7 +79,8 @@ namespace Flourish___Blotts
                     MessageBox.Show("Insert failed.");
 
                 this.PopulateGridView();
-                this.ClearAll();
+                FormClear.ClearAllControls(this);
+                //this.ClearAll();
             }
             catch (Exception ex)
             {
@@ -112,7 +113,8 @@ namespace Flourish___Blotts
                     MessageBox.Show("Update failed. No matching record found.");
 
                 this.PopulateGridView();
-                this.ClearAll();
+                FormClear.ClearAllControls(this);
+                //this.ClearAll();
             }
             catch (Exception ex)
             {

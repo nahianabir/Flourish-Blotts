@@ -72,6 +72,7 @@
     <Compile Include="EmployeePage.Designer.cs">
       <DependentUpon>EmployeePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormClear.cs" />
     <Compile Include="HomePage.cs">
       <SubType>UserControl</SubType>
     </Compile>

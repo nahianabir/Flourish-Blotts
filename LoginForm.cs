@@ -101,7 +101,6 @@ namespace Flourish___Blotts
             string userID = txtID.Text;
             string password = txtPassword.Text;
 
-
             if (string.IsNullOrWhiteSpace(userID) || string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("Please enter both Id and Password.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -110,7 +109,6 @@ namespace Flourish___Blotts
             try
             {
                 //admin login
-                // ❗ Using your DataAccess.ExecuteQueryTable
                 string sql = "SELECT * FROM Admin WHERE ID = '" + userID +
                              "' AND Password COLLATE SQL_Latin1_General_CP1_CS_AS = '" + password + "';";
 
@@ -120,16 +118,13 @@ namespace Flourish___Blotts
                 {
                     MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // 👉 Open AdminPanelForm
                     AdminPanelForm adminPanel = new AdminPanelForm();
                     adminPanel.Show();
                     this.Hide();
                     return;
-                    
                 }
 
                 //employee login
-
                 string empSql = "SELECT * FROM Employee WHERE Id = '" + userID +
                         "' AND Password COLLATE SQL_Latin1_General_CP1_CS_AS = '" + password + "';";
 
@@ -137,21 +132,27 @@ namespace Flourish___Blotts
 
                 if (empDt.Rows.Count == 1)
                 {
-                    MessageBox.Show("Employee login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    string status = empDt.Rows[0]["ActiveStatus"].ToString();
 
-                    SalesmanPanelForm salesmanPanel = new SalesmanPanelForm();
-                    salesmanPanel.Show();
-                    this.Hide();
+                    if (status.Equals("Active", StringComparison.OrdinalIgnoreCase))
+                    {
+                        MessageBox.Show("Employee login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    //need to be fixed
-                    salesmanPanel.FormClosed += (s, args) => this.Close();
-                    return;
+                        SalesmanPanelForm salesmanPanel = new SalesmanPanelForm();
+                        salesmanPanel.Show();
+                        this.Hide();
+
+                        salesmanPanel.FormClosed += (s, args) => this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Your account is inactive. Contact admin.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
-
-                // 🔹 Step 3: Neither Admin nor Employee
-                MessageBox.Show("Invalid ID or Password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            
-
+                else
+                {
+                    MessageBox.Show("Invalid ID or Password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {
