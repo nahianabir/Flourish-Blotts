@@ -138,22 +138,6 @@
   <metadata name="Column7.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnLogOut.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAhJJREFUWEft
-        l71RAzEQhV/gwJE7oAnX4BkSAjdATOoS3AEpMQ24ACogpQRSUkJmYL5j97zSybo7o8sI3tjW/j3tjyTr
-        9nAnIOlG0rOkT0nffwQ+nvDp/i/Bg68teO7k/Ur4JiCxyoOWCGzNyIHxh6RHk5GdOdibPdjmQUsEMCDo
-        i6SdpJOkL4OvVXeSOJVWZof9LpcnumbgBE72eyPpXtJbKAclqu6md/pb0usIxJ1aOo9WV+R88rvaXM0I
-        BIf0QZwQMrPP9YJ+WwKmQ13pBRx7NoolCQTQa0MgOKc/fGSPuTzoHUyvK9clv7MJmP6Dz3kuy/TIGtlg
-        nIsHkysuQsB0ydhr8J+QcKXFCJg+TewjnZBwhasJhFElzTV4U3qcTSsCTAbj5s6ngHHupqMFAT816foa
-        YgY6uyYEclkJliU/TfvgncwUFiOQTUESvJOb0pIEOAsoAY2aBO/kptScgI0efte5LNEz5aYEbNf4otuL
-        90WvawatCbS/DbMA/wQWI4DRHAIQpttzIPdn/eAKLhHAyJ/RHKv10TkTYIfxOR+f9eDigyUnwNhwY2E0
-        +gIOBCDMKZeDTKJT3UhPwJxyZHJi+ZmN8+ILOBCAKHY5RgMPCATnlIMzO76ACXi+QEaacA4GC91i+gL2
-        u57vNCsEab5JNR7DYCERlv8hURrPzMU+mYrBQgn27KJJCU5GaLTqfE/FDx5yRu4Q8Qq0AAAAAElFTkSu
-        QmCC
-</value>
-  </data>
   <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -173,6 +157,37 @@
     <value>True</value>
   </metadata>
   <metadata name="Column7.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnLogOut.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAhJJREFUWEft
+        l71RAzEQhV/gwJE7oAnX4BkSAjdATOoS3AEpMQ24ACogpQRSUkJmYL5j97zSybo7o8sI3tjW/j3tjyTr
+        9nAnIOlG0rOkT0nffwQ+nvDp/i/Bg68teO7k/Ur4JiCxyoOWCGzNyIHxh6RHk5GdOdibPdjmQUsEMCDo
+        i6SdpJOkL4OvVXeSOJVWZof9LpcnumbgBE72eyPpXtJbKAclqu6md/pb0usIxJ1aOo9WV+R88rvaXM0I
+        BIf0QZwQMrPP9YJ+WwKmQ13pBRx7NoolCQTQa0MgOKc/fGSPuTzoHUyvK9clv7MJmP6Dz3kuy/TIGtlg
+        nIsHkysuQsB0ydhr8J+QcKXFCJg+TewjnZBwhasJhFElzTV4U3qcTSsCTAbj5s6ngHHupqMFAT816foa
+        YgY6uyYEclkJliU/TfvgncwUFiOQTUESvJOb0pIEOAsoAY2aBO/kptScgI0efte5LNEz5aYEbNf4otuL
+        90WvawatCbS/DbMA/wQWI4DRHAIQpttzIPdn/eAKLhHAyJ/RHKv10TkTYIfxOR+f9eDigyUnwNhwY2E0
+        +gIOBCDMKZeDTKJT3UhPwJxyZHJi+ZmN8+ILOBCAKHY5RgMPCATnlIMzO76ACXi+QEaacA4GC91i+gL2
+        u57vNCsEab5JNR7DYCERlv8hURrPzMU+mYrBQgn27KJJCU5GaLTqfE/FDx5yRu4Q8Qq0AAAAAElFTkSu
+        QmCC
+</value>
+  </data>
+  <metadata name="Id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ISBN.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column9.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Quantity.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column11.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

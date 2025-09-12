@@ -150,5 +150,62 @@ namespace Flourish___Blotts
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        private void BookPage_Load(object sender, EventArgs e)
+        {
+            this.dgvBook.ClearSelection();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.dgvBook.SelectedRows.Count < 1)
+                {
+                    MessageBox.Show("Please select a row first to delete.", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                    return;
+                }
+
+                var isbn = this.dgvBook.CurrentRow.Cells[0].Value.ToString();
+                var name = this.dgvBook.CurrentRow.Cells[1].Value.ToString();
+
+                DialogResult res = MessageBox.Show("Are you sure to remove " + name + "?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (res == DialogResult.No)
+                    return;
+
+                var sql = "delete from Book where ISBN = '" + isbn + "';";
+                var count = this.Da.ExecuteDMLQuery(sql);
+
+                if (count == 1)
+                    MessageBox.Show(name.ToUpper() + " has been removed from the list");
+                else
+                    MessageBox.Show("Data hasn't been deleted");
+
+                this.PopulateGridView();
+                FormClear.ClearAllControls(this);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("An error has occured: " + exc.Message);
+            }
+        }
+
+
+        private void SearchBook()
+        {
+            var sql = "select * from Book where Name like '" + this.txtAutoSearch.Text + "%';";
+            this.PopulateGridView(sql);
+        }
+        
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            this.SearchBook();
+        }
+
+        private void txtAutoSearch_TextChanged_1(object sender, EventArgs e)
+        {
+            this.SearchBook();
+        }
     }
 }

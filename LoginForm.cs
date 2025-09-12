@@ -80,19 +80,21 @@ namespace Flourish___Blotts
             text = welcomeText;
             lblWelcome.Text = "";
             timer1.Start();
+
+            txtPassword.UseSystemPasswordChar = true;
         }
 
 
         //Show pass
         private void chkShowPass_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkShowPass.Checked == true)
+            if (chkShowPass.Checked)
             {
-                txtPassword.UseSystemPasswordChar = true;
+                txtPassword.UseSystemPasswordChar = false;
             }
             else
             {
-                txtPassword.UseSystemPasswordChar = false;
+                txtPassword.UseSystemPasswordChar = true;
             }
         }
 

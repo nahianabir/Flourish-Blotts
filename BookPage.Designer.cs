@@ -219,6 +219,7 @@ namespace Flourish___Blotts
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
@@ -293,6 +294,7 @@ namespace Flourish___Blotts
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtAutoSearch
             // 
@@ -301,6 +303,7 @@ namespace Flourish___Blotts
             this.txtAutoSearch.Name = "txtAutoSearch";
             this.txtAutoSearch.Size = new System.Drawing.Size(443, 33);
             this.txtAutoSearch.TabIndex = 0;
+            this.txtAutoSearch.TextChanged += new System.EventHandler(this.txtAutoSearch_TextChanged_1);
             // 
             // panel2
             // 
@@ -387,6 +390,7 @@ namespace Flourish___Blotts
             this.Controls.Add(this.panel1);
             this.Name = "BookPage";
             this.Size = new System.Drawing.Size(960, 689);
+            this.Load += new System.EventHandler(this.BookPage_Load);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
