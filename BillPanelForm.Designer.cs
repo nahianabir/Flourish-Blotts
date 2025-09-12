@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cmbPaymentType = new System.Windows.Forms.ComboBox();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -43,8 +45,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvCart = new System.Windows.Forms.DataGridView();
-            this.txtCustomerName = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,6 +77,22 @@
             this.panel1.Size = new System.Drawing.Size(649, 730);
             this.panel1.TabIndex = 0;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(20, 207);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(87, 16);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Customer Name";
+            // 
+            // txtCustomerName
+            // 
+            this.txtCustomerName.Location = new System.Drawing.Point(122, 203);
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.Size = new System.Drawing.Size(100, 20);
+            this.txtCustomerName.TabIndex = 15;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -108,6 +124,7 @@
             this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label6
             // 
@@ -209,22 +226,6 @@
             this.dgvCart.Name = "dgvCart";
             this.dgvCart.Size = new System.Drawing.Size(630, 295);
             this.dgvCart.TabIndex = 0;
-            // 
-            // txtCustomerName
-            // 
-            this.txtCustomerName.Location = new System.Drawing.Point(122, 203);
-            this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.Size = new System.Drawing.Size(100, 20);
-            this.txtCustomerName.TabIndex = 15;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(20, 207);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(87, 16);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Customer Name";
             // 
             // Column1
             // 

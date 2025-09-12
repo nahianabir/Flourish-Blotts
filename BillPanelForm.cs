@@ -81,5 +81,10 @@ namespace Flourish___Blotts
         {
             txtSalesmanID.Text = SalesmanID;
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

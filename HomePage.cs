@@ -30,7 +30,7 @@ namespace Flourish___Blotts
                (SELECT SUM(Quantity) FROM Sales) AS TotalBooksSold,
                (SELECT COUNT(*) FROM Book) AS TotalBooks,
                (SELECT COUNT(*) FROM Employee WHERE ActiveStatus = 'Active') AS ActiveSalesmen
-        ";
+            ";
 
             DataTable dt = this.Da.ExecuteQueryTable(query);
             dgvShow.DataSource = dt; // assign the DataTable to your DataGridView
@@ -45,10 +45,10 @@ namespace Flourish___Blotts
         SELECT 
             FORMAT(SaleDate, 'yyyy-MM') AS SaleMonth,
             SUM(TotalPrice) AS TotalSale
-        FROM Sales
-        GROUP BY FORMAT(SaleDate, 'yyyy-MM')
-        ORDER BY SaleMonth
-    ";
+            FROM Sales
+            GROUP BY FORMAT(SaleDate, 'yyyy-MM')
+            ORDER BY SaleMonth
+            ";
 
             DataTable dt = this.Da.ExecuteQueryTable(query);
 
