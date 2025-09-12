@@ -63,7 +63,13 @@ namespace Flourish___Blotts
         {
             BillPanelForm bill = new BillPanelForm();
             bill.SalesmanID = this.LoggedInSalesmanID;
-            bill.Show();
+            DialogResult result = bill.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                this.PopulateCartGridView();
+                this.CalculateCartTotal();
+            }
         }
 
         private void txtAutoSearch_TextChanged(object sender, EventArgs e)

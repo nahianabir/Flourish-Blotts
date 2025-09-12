@@ -75,8 +75,11 @@ namespace Flourish___Blotts
 
                 // Clear cart
                 this.Da.ExecuteDMLQuery("delete from Cart;");
+                this.DialogResult = DialogResult.OK;
 
-                MessageBox.Show("Sale completed successfully!");
+                MessageBox.Show("Sale Completed", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+
 
                 // Refresh Cart grid
                 this.PopulateCartGridView();

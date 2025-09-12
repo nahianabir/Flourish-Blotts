@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dgvShow = new System.Windows.Forms.DataGridView();
             this.chtSales = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.TotalSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtSales)).BeginInit();
             this.SuspendLayout();
@@ -47,10 +47,10 @@
             this.dgvShow.AllowUserToDeleteRows = false;
             this.dgvShow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvShow.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TotalSale,
-            this.Total,
+            this.Column1,
             this.Column2,
-            this.Column1});
+            this.Column3,
+            this.Column4});
             this.dgvShow.Location = new System.Drawing.Point(0, 0);
             this.dgvShow.Name = "dgvShow";
             this.dgvShow.ReadOnly = true;
@@ -60,49 +60,53 @@
             // 
             // chtSales
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chtSales.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chtSales.Legends.Add(legend1);
+            chartArea6.Name = "ChartArea1";
+            this.chtSales.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chtSales.Legends.Add(legend6);
             this.chtSales.Location = new System.Drawing.Point(3, 309);
             this.chtSales.Name = "chtSales";
             this.chtSales.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chtSales.Series.Add(series1);
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.chtSales.Series.Add(series6);
             this.chtSales.Size = new System.Drawing.Size(954, 377);
             this.chtSales.TabIndex = 1;
             this.chtSales.Text = "chart1";
-            // 
-            // TotalSale
-            // 
-            this.TotalSale.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TotalSale.HeaderText = "Total Sale";
-            this.TotalSale.MinimumWidth = 7;
-            this.TotalSale.Name = "TotalSale";
-            this.TotalSale.ReadOnly = true;
-            // 
-            // Total
-            // 
-            this.Total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Total.HeaderText = "Total Book sale";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "Total Books";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.chtSales.Click += new System.EventHandler(this.chtSales_Click);
             // 
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "Active Salesman";
+            this.Column1.DataPropertyName = "TotalSale";
+            this.Column1.HeaderText = "Total Sales";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.DataPropertyName = "TotalBooksSold";
+            this.Column2.HeaderText = "Books Sold";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.DataPropertyName = "TotalBooks";
+            this.Column3.HeaderText = "Total Books";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.DataPropertyName = "ActiveSalesmen";
+            this.Column4.HeaderText = "Active Salesman";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // HomePage
             // 
@@ -122,9 +126,9 @@
 
         private System.Windows.Forms.DataGridView dgvShow;
         private System.Windows.Forms.DataVisualization.Charting.Chart chtSales;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalSale;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }
