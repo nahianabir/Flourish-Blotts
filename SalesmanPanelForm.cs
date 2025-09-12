@@ -14,6 +14,7 @@ namespace Flourish___Blotts
     {
 
         private DataAccess Da { get; set; }
+        public string LoggedInSalesmanID { get; set; }
         public SalesmanPanelForm()
         {
             InitializeComponent();
@@ -64,6 +65,7 @@ namespace Flourish___Blotts
         private void btnBill_Click(object sender, EventArgs e)
         {
             BillPanelForm bill = new BillPanelForm();
+            bill.SalesmanID = this.LoggedInSalesmanID;
             bill.Show();
         }
 

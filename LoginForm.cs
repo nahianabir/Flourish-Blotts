@@ -138,9 +138,12 @@ namespace Flourish___Blotts
 
                     if (status.Equals("Active", StringComparison.OrdinalIgnoreCase))
                     {
-                        MessageBox.Show("Employee login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        string empName = empDt.Rows[0]["Name"].ToString();
+                        MessageBox.Show($"Employee login successful! Welcome, {empName}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         SalesmanPanelForm salesmanPanel = new SalesmanPanelForm();
+                        salesmanPanel.LoggedInSalesmanID = userID;
+
                         salesmanPanel.Show();
                         this.Hide();
 

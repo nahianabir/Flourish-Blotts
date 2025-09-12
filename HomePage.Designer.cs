@@ -31,48 +31,32 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.dgvShow = new System.Windows.Forms.DataGridView();
             this.TotalSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.chtSales = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtSales)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvShow
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvShow.AllowUserToAddRows = false;
+            this.dgvShow.AllowUserToDeleteRows = false;
+            this.dgvShow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvShow.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TotalSale,
             this.Total,
             this.Column2,
             this.Column1});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(957, 303);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // chart1
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(3, 309);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(954, 377);
-            this.chart1.TabIndex = 1;
-            this.chart1.Text = "chart1";
+            this.dgvShow.Location = new System.Drawing.Point(0, 0);
+            this.dgvShow.Name = "dgvShow";
+            this.dgvShow.ReadOnly = true;
+            this.dgvShow.Size = new System.Drawing.Size(957, 303);
+            this.dgvShow.TabIndex = 0;
+            this.dgvShow.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // TotalSale
             // 
@@ -100,24 +84,41 @@
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
+            // chtSales
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chtSales.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chtSales.Legends.Add(legend1);
+            this.chtSales.Location = new System.Drawing.Point(3, 309);
+            this.chtSales.Name = "chtSales";
+            this.chtSales.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chtSales.Series.Add(series1);
+            this.chtSales.Size = new System.Drawing.Size(954, 377);
+            this.chtSales.TabIndex = 1;
+            this.chtSales.Text = "chart1";
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.chart1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.chtSales);
+            this.Controls.Add(this.dgvShow);
             this.Name = "HomePage";
             this.Size = new System.Drawing.Size(960, 689);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtSales)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataGridView dgvShow;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtSales;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalSale;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
