@@ -33,22 +33,26 @@ namespace Flourish___Blotts
             // Check if a row is selected
             if (dgvBookReq.SelectedRows.Count == 0 && dgvBookReq.SelectedCells.Count == 0)
             {
-                MessageBox.Show("Please select a book request to delete.", "No Selection",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a row to delete.", "No Selection",MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             // Get the selected row
             DataGridViewRow row;
             if (dgvBookReq.SelectedRows.Count > 0)
+            {
                 row = dgvBookReq.SelectedRows[0];
+            }
             else
+            {
                 row = dgvBookReq.Rows[dgvBookReq.SelectedCells[0].RowIndex];
+            }
 
             // Assuming the first column contains the ID of the request
             var requestId = Convert.ToInt32(row.Cells[0].Value);
 
             // Ask for confirmation
-            DialogResult result = MessageBox.Show("Are you sure you want to delete this book request?","Confirm Delete",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this request?","Confirm Delete",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
@@ -58,13 +62,13 @@ namespace Flourish___Blotts
 
                 if (deleted > 0)
                 {
-                    MessageBox.Show("Book request deleted successfully.", "Success",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Request deleted!", "Success",MessageBoxButtons.OK, MessageBoxIcon.Information);
                     
                     this.PopulateGridView();
                 }
                 else
                 {
-                    MessageBox.Show("Failed to delete the book request.", "Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Failed to delete the request.", "Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

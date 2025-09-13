@@ -116,6 +116,7 @@
             this.btnRequest.TabIndex = 6;
             this.btnRequest.Text = "Request";
             this.btnRequest.UseVisualStyleBackColor = true;
+            this.btnRequest.Click += new System.EventHandler(this.btnRequest_Click);
             // 
             // BookRequestPanel
             // 

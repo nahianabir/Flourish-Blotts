@@ -12,9 +12,60 @@ namespace Flourish___Blotts
 {
     public partial class BookRequestPanel : Form
     {
+        private DataAccess Da { get; set; }
         public BookRequestPanel()
         {
             InitializeComponent();
+            this.Da = new DataAccess();
+        }
+
+        private void btnRequest_Click(object sender, EventArgs e)
+        {
+            // Validate input fields
+            if (string.IsNullOrWhiteSpace(txtBookName.Text))
+            {
+                MessageBox.Show("Please enter a book name.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtBookName.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtAuthorName.Text))
+            {
+                MessageBox.Show("Please enter an author name.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtAuthorName.Focus();
+                return;
+            }
+
+
+
+            try
+            {
+                // Prepare SQL query to insert record
+                string bookName = txtBookName.Text.Trim();
+                string authorName = txtAuthorName.Text.Trim();
+                string insertQuery = $"INSERT INTO BookRequests (BookName, AuthorName) VALUES ('{bookName}', '{authorName}')";
+
+                // Execute the query
+                int result = this.Da.ExecuteDMLQuery(insertQuery);
+
+                if (result > 0)
+                {
+                    MessageBox.Show("Book request submitted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Clear input fields
+                    txtBookName.Clear();
+                    txtAuthorName.Clear();
+                    txtBookName.Focus();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to submit book request.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
