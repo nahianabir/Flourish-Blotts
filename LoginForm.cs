@@ -89,7 +89,8 @@ namespace Flourish___Blotts
 
                 if (adminDt.Rows.Count == 1)
                 {
-                    MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    string adminName = adminDt.Rows[0]["Name"].ToString();
+                    MessageBox.Show($"Admin login successful! Welcome, {adminName}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     AdminPanelForm adminPanel = new AdminPanelForm();
                     
