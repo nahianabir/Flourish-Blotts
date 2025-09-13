@@ -43,6 +43,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -53,17 +54,18 @@
             this.btnBill = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvCart = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ISBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnBookRquest = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).BeginInit();
             this.panel2.SuspendLayout();
@@ -171,6 +173,9 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.RosyBrown;
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.btnBookRquest);
             this.panel2.Controls.Add(this.btnLogOut);
             this.panel2.Location = new System.Drawing.Point(1, 1);
             this.panel2.Name = "panel2";
@@ -211,6 +216,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(520, 651);
             this.panel3.TabIndex = 2;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(101, 228);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 18;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // label6
             // 
@@ -312,6 +327,45 @@
             this.dgvCart.TabIndex = 5;
             this.dgvCart.DoubleClick += new System.EventHandler(this.dgvCart_DoubleClick);
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Count";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // ISBN
+            // 
+            this.ISBN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ISBN.DataPropertyName = "ISBN";
+            this.ISBN.HeaderText = "ISBN";
+            this.ISBN.Name = "ISBN";
+            this.ISBN.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column9.DataPropertyName = "Name";
+            this.Column9.HeaderText = "Name";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            this.Quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Quantity.DataPropertyName = "Quantity";
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            // 
+            // Column11
+            // 
+            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column11.DataPropertyName = "Price";
+            this.Column11.HeaderText = "Price";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -358,54 +412,27 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Cart";
             // 
-            // Id
+            // btnBookRquest
             // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Count";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
+            this.btnBookRquest.Image = ((System.Drawing.Image)(resources.GetObject("btnBookRquest.Image")));
+            this.btnBookRquest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBookRquest.Location = new System.Drawing.Point(29, 17);
+            this.btnBookRquest.Name = "btnBookRquest";
+            this.btnBookRquest.Size = new System.Drawing.Size(101, 44);
+            this.btnBookRquest.TabIndex = 6;
+            this.btnBookRquest.Text = "      Request Book";
+            this.btnBookRquest.UseVisualStyleBackColor = true;
+            this.btnBookRquest.Click += new System.EventHandler(this.btnBookRquest_Click);
             // 
-            // ISBN
+            // label7
             // 
-            this.ISBN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ISBN.DataPropertyName = "ISBN";
-            this.ISBN.HeaderText = "ISBN";
-            this.ISBN.Name = "ISBN";
-            this.ISBN.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column9.DataPropertyName = "Name";
-            this.Column9.HeaderText = "Name";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            // 
-            // Quantity
-            // 
-            this.Quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Quantity.DataPropertyName = "Quantity";
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            // 
-            // Column11
-            // 
-            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column11.DataPropertyName = "Price";
-            this.Column11.HeaderText = "Price";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(101, 228);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 18;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Ubuntu", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(513, 29);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(99, 25);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Salesman";
             // 
             // SalesmanPanelForm
             // 
@@ -418,6 +445,7 @@
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "SalesmanPanelForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -427,6 +455,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).EndInit();
@@ -471,5 +500,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnBookRquest;
+        private System.Windows.Forms.Label label7;
     }
 }

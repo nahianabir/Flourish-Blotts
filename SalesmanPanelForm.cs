@@ -317,5 +317,11 @@ namespace Flourish___Blotts
             this.txtQuantity.Text = this.dgvCart.CurrentRow.Cells[3].Value.ToString();
             this.txtPrice.Text = this.dgvCart.CurrentRow.Cells[4].Value.ToString();
         }
+
+        private void btnBookRquest_Click(object sender, EventArgs e)
+        {
+            BookRequestPanel bookRequest = new BookRequestPanel();
+            bookRequest.Show();
+        }
     }
 }

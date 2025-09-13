@@ -38,12 +38,14 @@
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnRequests = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnRequests);
             this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.btnHome);
             this.panel1.Controls.Add(this.btnEmployee);
@@ -82,7 +84,7 @@
             // 
             this.btnEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnEmployee.Image")));
             this.btnEmployee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmployee.Location = new System.Drawing.Point(15, 273);
+            this.btnEmployee.Location = new System.Drawing.Point(15, 305);
             this.btnEmployee.Name = "btnEmployee";
             this.btnEmployee.Size = new System.Drawing.Size(116, 44);
             this.btnEmployee.TabIndex = 2;
@@ -94,7 +96,7 @@
             // 
             this.btnSales.Image = ((System.Drawing.Image)(resources.GetObject("btnSales.Image")));
             this.btnSales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSales.Location = new System.Drawing.Point(15, 207);
+            this.btnSales.Location = new System.Drawing.Point(15, 228);
             this.btnSales.Name = "btnSales";
             this.btnSales.Size = new System.Drawing.Size(116, 44);
             this.btnSales.TabIndex = 1;
@@ -106,7 +108,7 @@
             // 
             this.btnBook.Image = ((System.Drawing.Image)(resources.GetObject("btnBook.Image")));
             this.btnBook.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBook.Location = new System.Drawing.Point(15, 144);
+            this.btnBook.Location = new System.Drawing.Point(15, 153);
             this.btnBook.Name = "btnBook";
             this.btnBook.Size = new System.Drawing.Size(116, 44);
             this.btnBook.TabIndex = 0;
@@ -141,6 +143,18 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Admin";
             // 
+            // btnRequests
+            // 
+            this.btnRequests.Image = ((System.Drawing.Image)(resources.GetObject("btnRequests.Image")));
+            this.btnRequests.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRequests.Location = new System.Drawing.Point(15, 383);
+            this.btnRequests.Name = "btnRequests";
+            this.btnRequests.Size = new System.Drawing.Size(116, 44);
+            this.btnRequests.TabIndex = 5;
+            this.btnRequests.Text = "Requests";
+            this.btnRequests.UseVisualStyleBackColor = true;
+            this.btnRequests.Click += new System.EventHandler(this.btnRequests_Click);
+            // 
             // AdminPanelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,5 +188,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnRequests;
     }
 }

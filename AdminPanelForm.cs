@@ -61,5 +61,10 @@ namespace Flourish___Blotts
             this.Close();
             
         }
+
+        private void btnRequests_Click(object sender, EventArgs e)
+        {
+            LoadPage(new RequestsPage());
+        }
     }
 }
