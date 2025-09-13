@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dgvShow = new System.Windows.Forms.DataGridView();
-            this.chtSales = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chtSales = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtSales)).BeginInit();
             this.SuspendLayout();
@@ -56,25 +56,6 @@
             this.dgvShow.ReadOnly = true;
             this.dgvShow.Size = new System.Drawing.Size(957, 303);
             this.dgvShow.TabIndex = 0;
-            this.dgvShow.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // chtSales
-            // 
-            chartArea6.Name = "ChartArea1";
-            this.chtSales.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chtSales.Legends.Add(legend6);
-            this.chtSales.Location = new System.Drawing.Point(3, 309);
-            this.chtSales.Name = "chtSales";
-            this.chtSales.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chtSales.Series.Add(series6);
-            this.chtSales.Size = new System.Drawing.Size(954, 377);
-            this.chtSales.TabIndex = 1;
-            this.chtSales.Text = "chart1";
-            this.chtSales.Click += new System.EventHandler(this.chtSales_Click);
             // 
             // Column1
             // 
@@ -108,6 +89,23 @@
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
+            // chtSales
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chtSales.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chtSales.Legends.Add(legend1);
+            this.chtSales.Location = new System.Drawing.Point(3, 309);
+            this.chtSales.Name = "chtSales";
+            this.chtSales.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chtSales.Series.Add(series1);
+            this.chtSales.Size = new System.Drawing.Size(954, 377);
+            this.chtSales.TabIndex = 1;
+            this.chtSales.Text = "chart1";
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -116,6 +114,7 @@
             this.Controls.Add(this.dgvShow);
             this.Name = "HomePage";
             this.Size = new System.Drawing.Size(960, 689);
+            
             ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtSales)).EndInit();
             this.ResumeLayout(false);

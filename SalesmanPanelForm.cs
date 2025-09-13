@@ -34,6 +34,8 @@ namespace Flourish___Blotts
             this.dgvBook.DataSource = ds.Tables[0];
         }
 
+
+        //cart grid view
         private void PopulateCartGridView(string sql = "select * from Cart;")
         {
             var ds = this.Da.ExecuteQuery(sql);
@@ -50,6 +52,7 @@ namespace Flourish___Blotts
         private void SalesmanPanelForm_Load(object sender, EventArgs e)
         {
             this.dgvBook.ClearSelection();
+            this.dgvCart.ClearSelection();
         }
 
         private void dgvBook_DoubleClick(object sender, EventArgs e)
@@ -58,6 +61,9 @@ namespace Flourish___Blotts
             this.txtName.Text = this.dgvBook.CurrentRow.Cells[1].Value.ToString();
             this.txtPrice.Text = this.dgvBook.CurrentRow.Cells[6].Value.ToString();
         }
+
+
+
 
         private void btnBill_Click(object sender, EventArgs e)
         {
@@ -126,7 +132,7 @@ namespace Flourish___Blotts
                     var sqlUpdate = "update Book set Quantity = Quantity - " + quantity + " where ISBN = '" + this.txtISBN.Text + "';";
                     this.Da.ExecuteDMLQuery(sqlUpdate);
 
-                    MessageBox.Show("Book added to cart and stock updated.");
+                    //MessageBox.Show("Book added to cart and stock updated.");
                 }
                 else
                 {
@@ -196,7 +202,7 @@ namespace Flourish___Blotts
                     var sqlUpdate = "update Book set Quantity = Quantity + " + quantity + " where ISBN = '" + isbn + "';";
                     this.Da.ExecuteDMLQuery(sqlUpdate);
 
-                    MessageBox.Show("Book removed from cart and stock restored.");
+                    //MessageBox.Show("Book removed from cart and stock restored.");
 
                     this.PopulateGridView();      
                     this.PopulateCartGridView(); 
@@ -216,8 +222,100 @@ namespace Flourish___Blotts
 
         }
 
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvCart.CurrentRow == null)
+                {
+                    MessageBox.Show("Please select a cart item to update first.");
+                    return;
+                }
 
-       
+                if (string.IsNullOrWhiteSpace(txtQuantity.Text))
+                {
+                    MessageBox.Show("Please enter a valid quantity.");
+                    return;
+                }
 
+                // cart details
+                int cartId = Convert.ToInt32(dgvCart.CurrentRow.Cells["Id"].Value);
+                string isbn = txtISBN.Text;
+                int oldQuantity = Convert.ToInt32(dgvCart.CurrentRow.Cells["Quantity"].Value);
+                int newQuantity = Convert.ToInt32(txtQuantity.Text);
+                decimal price = Convert.ToDecimal(txtPrice.Text);
+
+                // quantity difference
+                int quantityDifference = newQuantity - oldQuantity;
+
+                // If no change, do nothing
+                if (quantityDifference == 0)
+                {
+                    MessageBox.Show("No quantity change detected.");
+                    return;
+                }
+
+                // Check if we need more books from inventory
+                if (quantityDifference > 0)
+                {
+                    // Check available stock
+                    var stockQuery = "select Quantity from Book where ISBN = '" + isbn + "';";
+                    var dt = this.Da.ExecuteQueryTable(stockQuery);
+
+                    if (dt.Rows.Count == 0)
+                    {
+                        MessageBox.Show("Book not found in stock.");
+                        return;
+                    }
+
+                    int availableStock = Convert.ToInt32(dt.Rows[0]["Quantity"]);
+                    if (quantityDifference > availableStock)
+                    {
+                        MessageBox.Show("Not enough stock available. Only " + availableStock + " additional copies available.");
+                        return;
+                    }
+                }
+
+                // Update the cart with new quantity and total price
+                decimal newTotalPrice = newQuantity * price;
+                string updateCartSql = "update Cart set Quantity = " + newQuantity +
+                                      ", TotalPrice = " + newTotalPrice +
+                                      " where Id = " + cartId + ";";
+
+                int cartUpdateResult = this.Da.ExecuteDMLQuery(updateCartSql);
+
+                if (cartUpdateResult == 1)
+                {
+                    // Update book inventory
+                    string updateBookSql = "update Book set Quantity = Quantity - (" + quantityDifference +
+                                          ") where ISBN = '" + isbn + "';";
+                    this.Da.ExecuteDMLQuery(updateBookSql);
+
+                    MessageBox.Show("Cart updated successfully.");
+
+                    // Refresh displays
+                    this.PopulateGridView();
+                    this.PopulateCartGridView();
+                    this.CalculateCartTotal();
+                    FormClear.ClearAllControls(this);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update cart.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating cart: " + ex.Message);
+            }
+        }
+
+        private void dgvCart_DoubleClick(object sender, EventArgs e)
+        {
+            this.txtISBN.Text = this.dgvCart.CurrentRow.Cells[1].Value.ToString();
+            this.txtName.Text = this.dgvCart.CurrentRow.Cells[2].Value.ToString();
+            this.txtQuantity.Text = this.dgvCart.CurrentRow.Cells[3].Value.ToString();
+            this.txtPrice.Text = this.dgvCart.CurrentRow.Cells[4].Value.ToString();
+        }
     }
 }

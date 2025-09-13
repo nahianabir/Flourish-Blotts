@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesmanPanelForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblSearch = new System.Windows.Forms.Label();
             this.txtAutoSearch = new System.Windows.Forms.TextBox();
             this.dgvBook = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +43,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -54,15 +58,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.lblSearch = new System.Windows.Forms.Label();
-            this.lblTotalPrice = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ISBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).BeginInit();
             this.panel2.SuspendLayout();
@@ -79,6 +80,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(604, 651);
             this.panel1.TabIndex = 0;
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Font = new System.Drawing.Font("Ubuntu", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearch.Location = new System.Drawing.Point(96, 57);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(50, 16);
+            this.lblSearch.TabIndex = 2;
+            this.lblSearch.Text = "Search-";
             // 
             // txtAutoSearch
             // 
@@ -180,6 +191,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnUpdate);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.lblTotalPrice);
             this.panel3.Controls.Add(this.btnDelete);
@@ -199,6 +211,36 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(520, 651);
             this.panel3.TabIndex = 2;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(382, 503);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 13);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Total Price : -";
+            // 
+            // lblTotalPrice
+            // 
+            this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblTotalPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTotalPrice.Location = new System.Drawing.Point(458, 503);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(2, 15);
+            this.lblTotalPrice.TabIndex = 16;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.IndianRed;
+            this.btnDelete.Location = new System.Drawing.Point(193, 228);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 15;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // txtPrice
             // 
@@ -268,6 +310,7 @@
             this.dgvCart.ReadOnly = true;
             this.dgvCart.Size = new System.Drawing.Size(511, 234);
             this.dgvCart.TabIndex = 5;
+            this.dgvCart.DoubleClick += new System.EventHandler(this.dgvCart_DoubleClick);
             // 
             // label5
             // 
@@ -315,46 +358,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Cart";
             // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.IndianRed;
-            this.btnDelete.Location = new System.Drawing.Point(108, 228);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 15;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // lblSearch
-            // 
-            this.lblSearch.AutoSize = true;
-            this.lblSearch.Font = new System.Drawing.Font("Ubuntu", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.Location = new System.Drawing.Point(96, 57);
-            this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(50, 16);
-            this.lblSearch.TabIndex = 2;
-            this.lblSearch.Text = "Search-";
-            // 
-            // lblTotalPrice
-            // 
-            this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.lblTotalPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTotalPrice.Location = new System.Drawing.Point(472, 503);
-            this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(2, 15);
-            this.lblTotalPrice.TabIndex = 16;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(382, 503);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 13);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Total Price : -";
-            // 
             // Id
             // 
             this.Id.DataPropertyName = "Id";
@@ -393,6 +396,16 @@
             this.Column11.HeaderText = "Price";
             this.Column11.Name = "Column11";
             this.Column11.ReadOnly = true;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(101, 228);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 18;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // SalesmanPanelForm
             // 
@@ -456,5 +469,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

@@ -26,7 +26,7 @@ namespace Flourish___Blotts
         {
             string query = @"
            SELECT
-               (SELECT SUM(Price) FROM Sales) AS TotalSale,
+               (SELECT SUM(TotalPrice) FROM Sales) AS TotalSale,
                (SELECT SUM(Quantity) FROM Sales) AS TotalBooksSold,
                (SELECT COUNT(*) FROM Book) AS TotalBooks,
                (SELECT COUNT(*) FROM Employee WHERE ActiveStatus = 'Active') AS ActiveSalesmen
@@ -68,14 +68,6 @@ namespace Flourish___Blotts
 
 
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
-
-        private void chtSales_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

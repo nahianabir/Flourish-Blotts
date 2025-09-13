@@ -92,6 +92,7 @@ namespace Flourish___Blotts
                     MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     AdminPanelForm adminPanel = new AdminPanelForm();
+                    
                     ShowPanel(adminPanel);
                     return;
                 }
