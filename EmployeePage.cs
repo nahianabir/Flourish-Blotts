@@ -131,5 +131,11 @@ namespace Flourish___Blotts
             this.cmbActiveStatus.Text = this.dgvEmployee.CurrentRow.Cells[4].Value.ToString();
 
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            var sql = "select * from Employee where Name like '" + this.txtSearch.Text + "%' OR ID like '" + this.txtSearch.Text + "%' OR ActiveStatus like '" + this.txtSearch.Text + "%';";
+            this.PopulateGridView(sql);
+        }
     }
 }
