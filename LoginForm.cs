@@ -15,11 +15,6 @@ namespace Flourish___Blotts
     public partial class LoginForm : Form
     {
         private DataAccess Da { get; set; }
-        private string text;
-        private int len = 0;
-        private bool isFirstAnimationComplete = false;
-        private string welcomeText;
-        private string backText;
         public LoginForm()
         {
             InitializeComponent();
