@@ -57,6 +57,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.RosyBrown;
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.txtCustomerName);
             this.panel1.Controls.Add(this.label7);
@@ -264,6 +265,7 @@
             this.ClientSize = new System.Drawing.Size(668, 747);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Ubuntu", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;

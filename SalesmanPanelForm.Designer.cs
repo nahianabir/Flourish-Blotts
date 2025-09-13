@@ -417,6 +417,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "SalesmanPanelForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
