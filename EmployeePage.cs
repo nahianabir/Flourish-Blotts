@@ -74,9 +74,13 @@ namespace Flourish___Blotts
                 var count = this.Da.ExecuteDMLQuery(sql);
 
                 if (count == 1)
+                {
                     MessageBox.Show("Employee has been added successfully");
+                }
                 else
+                {
                     MessageBox.Show("Insert failed.");
+                }
 
                 this.PopulateGridView();
                 FormClear.ClearAllControls(this);
@@ -108,9 +112,13 @@ namespace Flourish___Blotts
                 var count = this.Da.ExecuteDMLQuery(sql);
 
                 if (count == 1)
+                {
                     MessageBox.Show("Employee has been updated successfully");
+                }
                 else
+                {
                     MessageBox.Show("Update failed. No matching record found.");
+                }
 
                 this.PopulateGridView();
                 FormClear.ClearAllControls(this);

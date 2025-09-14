@@ -58,7 +58,7 @@ namespace Flourish___Blotts
                 // Insert each cart item into Sales table
                 foreach (DataRow row in dtCart.Rows)
                 {
-                    var sqlSale = "insert into Sales (CustomerName, CustomerPhone, PaymentType, SaleDate, ISBN, BookName, Quantity, Price, TotalPrice, SalesmanID) " +
+                    var saleSql = "insert into Sales (CustomerName, CustomerPhone, PaymentType, SaleDate, ISBN, BookName, Quantity, Price, TotalPrice, SalesmanID) " +
                                   "values ('" + this.txtCustomerName.Text + "', " +
                                           "'" + this.txtCustomerPhone.Text + "', " +
                                           "'" + this.cmbPaymentType.Text + "', " +
@@ -70,7 +70,8 @@ namespace Flourish___Blotts
                                           row["TotalPrice"].ToString() + ", " +
                                           "'" + this.txtSalesmanID.Text + "');";
 
-                    this.Da.ExecuteDMLQuery(sqlSale);
+
+                    this.Da.ExecuteDMLQuery(saleSql);
                 }
 
                 // Clear cart

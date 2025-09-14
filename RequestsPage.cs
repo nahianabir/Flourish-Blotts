@@ -57,8 +57,8 @@ namespace Flourish___Blotts
             if (result == DialogResult.Yes)
             {
                 // Execute the delete operation
-                string sql = $"DELETE FROM BookRequests WHERE RequestID = {requestId}";
-                var deleted = this.Da.ExecuteDMLQuery(sql);
+                string deleteSql = $"DELETE FROM BookRequests WHERE RequestID = {requestId}";
+                var deleted = this.Da.ExecuteDMLQuery(deleteSql);
 
                 if (deleted > 0)
                 {

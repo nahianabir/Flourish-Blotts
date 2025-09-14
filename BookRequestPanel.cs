@@ -43,19 +43,18 @@ namespace Flourish___Blotts
                 // Prepare SQL query to insert record
                 string bookName = txtBookName.Text.Trim();
                 string authorName = txtAuthorName.Text.Trim();
-                string insertQuery = $"INSERT INTO BookRequests (BookName, AuthorName) VALUES ('{bookName}', '{authorName}')";
+                string insertSql = $"INSERT INTO BookRequests (BookName, AuthorName) VALUES ('{bookName}', '{authorName}')";
 
                 // Execute the query
-                int result = this.Da.ExecuteDMLQuery(insertQuery);
+                int result = this.Da.ExecuteDMLQuery(insertSql);
 
                 if (result > 0)
                 {
                     MessageBox.Show("Book request submitted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     // Clear input fields
-                    txtBookName.Clear();
-                    txtAuthorName.Clear();
-                    txtBookName.Focus();
+                    FormClear.ClearAllControls(this);
+
                 }
                 else
                 {
