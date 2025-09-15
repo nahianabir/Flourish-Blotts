@@ -85,7 +85,8 @@ namespace Flourish___Blotts
                 if (adminDt.Rows.Count == 1)
                 {
                     string adminName = adminDt.Rows[0]["Name"].ToString();
-                    MessageBox.Show($"Admin login successful! Welcome, {adminName}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Admin login successful! Welcome, {adminName}", "Success",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     AdminPanelForm adminPanel = new AdminPanelForm();
                     
@@ -110,7 +111,8 @@ namespace Flourish___Blotts
                     if (status.Equals("Active", StringComparison.OrdinalIgnoreCase))
                     {
                         string empName = empDt.Rows[0]["Name"].ToString();
-                        MessageBox.Show($"Employee login successful! Welcome, {empName}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show($"Employee login successful! Welcome, {empName}", "Success", 
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         SalesmanPanelForm salesmanPanel = new SalesmanPanelForm();
                         salesmanPanel.LoggedInSalesmanID = userID;
@@ -121,12 +123,14 @@ namespace Flourish___Blotts
                     }
                     else
                     {
-                        MessageBox.Show("Your account is inactive. Contact admin.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Your account is inactive. Contact admin.", "Access Denied", 
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Invalid ID or Password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Invalid ID or Password.", "Login Failed", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)

@@ -105,6 +105,7 @@
             this.chtSales.Size = new System.Drawing.Size(954, 377);
             this.chtSales.TabIndex = 1;
             this.chtSales.Text = "chart1";
+            this.chtSales.Click += new System.EventHandler(this.chtSales_Click);
             // 
             // HomePage
             // 
@@ -114,7 +115,6 @@
             this.Controls.Add(this.dgvShow);
             this.Name = "HomePage";
             this.Size = new System.Drawing.Size(960, 689);
-            
             ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtSales)).EndInit();
             this.ResumeLayout(false);

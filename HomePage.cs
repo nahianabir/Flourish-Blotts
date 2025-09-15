@@ -65,9 +65,9 @@ namespace Flourish___Blotts
             }
         }
 
+        private void chtSales_Click(object sender, EventArgs e)
+        {
 
-
-
-
+        }
     }
 }

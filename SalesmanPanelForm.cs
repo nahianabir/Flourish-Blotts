@@ -122,7 +122,8 @@ namespace Flourish___Blotts
 
                 // Insert into Cart table
                 var sqlInsert = "insert into Cart (ISBN, Name, Quantity, Price, TotalPrice) " +
-                                "values ('" + this.txtISBN.Text + "', '" + this.txtName.Text + "', " + quantity + ", " + price + ", " + totalPrice + ");";
+                                "values ('" + this.txtISBN.Text + "', '" + this.txtName.Text + "', " + 
+                                quantity + ", " + price + ", " + totalPrice + ");";
 
                 var countInsert = this.Da.ExecuteDMLQuery(sqlInsert);
 
@@ -132,7 +133,7 @@ namespace Flourish___Blotts
                     var sqlUpdate = "update Book set Quantity = Quantity - " + quantity + " where ISBN = '" + this.txtISBN.Text + "';";
                     this.Da.ExecuteDMLQuery(sqlUpdate);
 
-                    //MessageBox.Show("Book added to cart and stock updated.");
+                    MessageBox.Show("Book added to cart and stock updated.");
                 }
                 else
                 {
