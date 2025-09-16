@@ -47,13 +47,10 @@ namespace Flourish___Blotts
 
         public void ShowPanel(Form panelForm)
         {
-            // Hide this login form instead of closing it
             this.Hide();
-
-            // Set up the panel form to show the login form again on close
             panelForm.FormClosed += (s, args) => this.Show();
 
-            
+
             panelForm.Show();
             FormClear.ClearAllControls(this);
         }

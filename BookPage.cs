@@ -193,7 +193,9 @@ namespace Flourish___Blotts
 
         private void SearchBook()
         {
-            var sql = "select * from Book where Name like '" + this.txtAutoSearch.Text + "%';";
+            var sql = "select * from Book where Name like '" + this.txtAutoSearch.Text +
+                "%'OR AuthorName like '%"+this.txtAutoSearch.Text+ "%';";
+
             this.PopulateGridView(sql);
         }
         

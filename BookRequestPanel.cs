@@ -21,18 +21,11 @@ namespace Flourish___Blotts
 
         private void btnRequest_Click(object sender, EventArgs e)
         {
-            // Validate input fields
-            if (string.IsNullOrWhiteSpace(txtBookName.Text))
+            if (string.IsNullOrWhiteSpace(this.txtBookName.Text) ||
+                string.IsNullOrWhiteSpace(this.txtAuthorName.Text))
             {
-                MessageBox.Show("Please enter a book name.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtBookName.Focus();
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtAuthorName.Text))
-            {
-                MessageBox.Show("Please enter an author name.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtAuthorName.Focus();
+                MessageBox.Show("Please enter both Book Name and Author Name.",
+                                "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -40,19 +33,16 @@ namespace Flourish___Blotts
 
             try
             {
-                // Prepare SQL query to insert record
                 string bookName = txtBookName.Text.Trim();
                 string authorName = txtAuthorName.Text.Trim();
                 string insertSql = $"INSERT INTO BookRequests (BookName, AuthorName) VALUES ('{bookName}', '{authorName}')";
 
-                // Execute the query
                 int result = this.Da.ExecuteDMLQuery(insertSql);
 
                 if (result > 0)
                 {
                     MessageBox.Show("Book request submitted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Clear input fields
                     FormClear.ClearAllControls(this);
 
                 }

@@ -80,7 +80,8 @@ namespace Flourish___Blotts
 
         private void txtAutoSearch_TextChanged(object sender, EventArgs e)
         {
-            var sql = "select * from Book where Name like '" + this.txtAutoSearch.Text + "%';";
+            var sql = "select * from Book where Name like '" + this.txtAutoSearch.Text + "%'" +
+                "OR AuthorName like '%"+ this.txtAutoSearch.Text + "%';";
             this.PopulateGridView(sql);
         }
 
@@ -100,7 +101,7 @@ namespace Flourish___Blotts
                 int quantity = Convert.ToInt32(this.txtQuantity.Text);
                 decimal price = Convert.ToDecimal(this.txtPrice.Text);
 
-                // Check available stock
+
                 var stockQuery = "select Quantity from Book where ISBN = '" + this.txtISBN.Text + "';";
                 var dt = this.Da.ExecuteQueryTable(stockQuery);
 
@@ -117,10 +118,10 @@ namespace Flourish___Blotts
                     return;
                 }
 
-                // Calculate total price
+
                 decimal totalPrice = quantity * price;
 
-                // Insert into Cart table
+
                 var sqlInsert = "insert into Cart (ISBN, Name, Quantity, Price, TotalPrice) " +
                                 "values ('" + this.txtISBN.Text + "', '" + this.txtName.Text + "', " + 
                                 quantity + ", " + price + ", " + totalPrice + ");";
@@ -129,7 +130,7 @@ namespace Flourish___Blotts
 
                 if (countInsert == 1)
                 {
-                    // Decrease stock in Book table
+
                     var sqlUpdate = "update Book set Quantity = Quantity - " + quantity + " where ISBN = '" + this.txtISBN.Text + "';";
                     this.Da.ExecuteDMLQuery(sqlUpdate);
 
@@ -188,22 +189,19 @@ namespace Flourish___Blotts
                     return;
                 }
 
-                // Get selected row data
                 int cartId = Convert.ToInt32(this.dgvCart.CurrentRow.Cells["Id"].Value);
                 string isbn = this.dgvCart.CurrentRow.Cells["ISBN"].Value.ToString();
                 int quantity = Convert.ToInt32(this.dgvCart.CurrentRow.Cells["Quantity"].Value);
 
-                // Delete only that row
                 var sqlDelete = "delete from Cart where Id = " + cartId + ";";
                 int countDelete = this.Da.ExecuteDMLQuery(sqlDelete);
 
                 if (countDelete == 1)
                 {
-                    // Restore stock in Book table
                     var sqlUpdate = "update Book set Quantity = Quantity + " + quantity + " where ISBN = '" + isbn + "';";
                     this.Da.ExecuteDMLQuery(sqlUpdate);
 
-                    //MessageBox.Show("Book removed from cart and stock restored.");
+                    MessageBox.Show("Book removed from cart and stock restored.");
 
                     this.PopulateGridView();      
                     this.PopulateCartGridView(); 
@@ -239,27 +237,25 @@ namespace Flourish___Blotts
                     return;
                 }
 
-                // cart details
                 int cartId = Convert.ToInt32(dgvCart.CurrentRow.Cells["Id"].Value);
                 string isbn = txtISBN.Text;
                 int oldQuantity = Convert.ToInt32(dgvCart.CurrentRow.Cells["Quantity"].Value);
                 int newQuantity = Convert.ToInt32(txtQuantity.Text);
                 decimal price = Convert.ToDecimal(txtPrice.Text);
 
-                // quantity difference
                 int quantityDifference = newQuantity - oldQuantity;
 
-                // If no change, do nothing
                 if (quantityDifference == 0)
                 {
                     MessageBox.Show("No quantity change detected.");
                     return;
                 }
 
-                // Check if we need more books from inventory
+
+
+
                 if (quantityDifference > 0)
                 {
-                    // Check available stock
                     var stockQuery = "select Quantity from Book where ISBN = '" + isbn + "';";
                     var dt = this.Da.ExecuteQueryTable(stockQuery);
 
@@ -277,7 +273,8 @@ namespace Flourish___Blotts
                     }
                 }
 
-                // Update the cart with new quantity and total price
+
+
                 decimal newTotalPrice = newQuantity * price;
                 string updateCartSql = "update Cart set Quantity = " + newQuantity +
                                       ", TotalPrice = " + newTotalPrice +
@@ -287,14 +284,14 @@ namespace Flourish___Blotts
 
                 if (cartUpdateResult == 1)
                 {
-                    // Update book inventory
                     string updateBookSql = "update Book set Quantity = Quantity - (" + quantityDifference +
                                           ") where ISBN = '" + isbn + "';";
                     this.Da.ExecuteDMLQuery(updateBookSql);
 
                     MessageBox.Show("Cart updated successfully.");
 
-                    // Refresh displays
+
+
                     this.PopulateGridView();
                     this.PopulateCartGridView();
                     this.CalculateCartTotal();

@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Flourish___Blotts
 {
-    internal class FormClear
+    internal static class FormClear
     {
         public static void ClearAllControls(Control parent)
         {
@@ -29,7 +29,7 @@ namespace Flourish___Blotts
                     ((DateTimePicker)c).Value = DateTime.Now;
 
                 else if (c.HasChildren)
-                    ClearAllControls(c); // recursive for panels, groupboxes, etc.
+                    ClearAllControls(c); 
             }
         }
     }

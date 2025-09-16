@@ -33,7 +33,7 @@ namespace Flourish___Blotts
             ";
 
             DataTable dt = this.Da.ExecuteQueryTable(query);
-            dgvShow.DataSource = dt; // assign the DataTable to your DataGridView
+            dgvShow.DataSource = dt;
         }
 
 

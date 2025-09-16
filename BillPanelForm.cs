@@ -44,7 +44,6 @@ namespace Flourish___Blotts
                     return;
                 }
 
-                // Get cart items
                 var dtCart = this.Da.ExecuteQueryTable("select * from Cart;");
                 if (dtCart.Rows.Count == 0)
                 {
@@ -52,10 +51,8 @@ namespace Flourish___Blotts
                     return;
                 }
 
-                // Format SaleDate (SQL expects yyyy-MM-dd)
                 string saleDate = this.dtpSaleDate.Value.ToString("yyyy-MM-dd");
 
-                // Insert each cart item into Sales table
                 foreach (DataRow row in dtCart.Rows)
                 {
                     var saleSql = "insert into Sales (CustomerName, CustomerPhone, PaymentType, SaleDate, ISBN, BookName, Quantity, Price, TotalPrice, SalesmanID) " +
@@ -74,7 +71,6 @@ namespace Flourish___Blotts
                     this.Da.ExecuteDMLQuery(saleSql);
                 }
 
-                // Clear cart
                 this.Da.ExecuteDMLQuery("delete from Cart;");
                 this.DialogResult = DialogResult.OK;
 
@@ -82,7 +78,7 @@ namespace Flourish___Blotts
                 this.Close();
 
 
-                // Refresh Cart grid
+
                 this.PopulateCartGridView();
             }
             catch (Exception ex)
