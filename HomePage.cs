@@ -25,7 +25,7 @@ namespace Flourish___Blotts
         private void LoadHomeStats()
         {
             string query = @"
-           SELECT
+               SELECT
                (SELECT SUM(TotalPrice) FROM Sales) AS TotalSale,
                (SELECT SUM(Quantity) FROM Sales) AS TotalBooksSold,
                (SELECT COUNT(*) FROM Book) AS TotalBooks,
@@ -42,7 +42,7 @@ namespace Flourish___Blotts
         private void LoadMonthlySalesChart()
         {
             string query = @"
-        SELECT 
+            SELECT 
             FORMAT(SaleDate, 'yyyy-MM') AS SaleMonth,
             SUM(TotalPrice) AS TotalSale
             FROM Sales
